@@ -1,0 +1,15 @@
+{
+    "clangd.path": "clangd",
+    "clangd.arguments": [
+        "--query-driver=/usr/bin/arm-none-eabi-gcc"
+    ],
+    "clangd.restartAfterCrash": true,
+    "editor.indentSize": 4,
+    "explorer.excludeGitIgnore": true,
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": "openEditors"
+}
