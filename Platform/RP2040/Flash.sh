@@ -16,7 +16,16 @@ set -uo pipefail
 
 RUN_PATTERN='\(COM[0-9]+\)'
 BOOTSEL_PATTERN='RP2 Boot'
-UF2_PATH="$HOME/gui.ll/build/gui.ll.uf2"
+
+if [[ $# -lt 1 || -z "${1:-}" ]]; then
+    echo "Usage: $0 <path-to-uf2>" >&2
+    exit 1
+fi
+UF2_PATH="$1"
+if [[ ! -f "$UF2_PATH" ]]; then
+    echo "UF2 file not found: $UF2_PATH" >&2
+    exit 1
+fi
 
 # Prints the matching "Connected:" line (CR stripped) for a device pattern, or
 # nothing if not found. Only lines that start with a busid like "3-3" match;

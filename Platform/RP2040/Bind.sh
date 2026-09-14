@@ -62,7 +62,7 @@ invoke_bind() {
     # Raise a UAC prompt to run the privileged "usbipd bind". This is the only
     # step that needs Windows elevation; everything else is plain bash.
     powershell.exe -NoProfile -Command \
-        "Start-Process usbipd -Verb RunAs -Wait -ArgumentList 'bind','--busid=$busid'"
+        "Start-Process usbipd -Verb RunAs -Wait -ArgumentList 'bind','--force','--busid=$busid'"
 }
 
 ensure_shared() {
